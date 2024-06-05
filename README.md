@@ -160,5 +160,109 @@ C:\Users\Lucas\Desktop\iniciando-com-git>git commit -m "Primeiro Commit Git"
  create mode 100644 style.css
 ```
 
+Após o Commit, os arquivos deixam o Stage
+É possível fazer o Commit de um mais arquivos, sem adicioná-los previamente ao Stage com o seguinte comando
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git commit -a -m "Atualização do H1"
+[master c591b37] Atualização do H1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+Caso seja necessário alterar novamente um arquivo no último Commit feito, é possível utilizando o comando amend
+```terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git commit --amend -m "H1 modificado. Alterando último Commit"
+[master ebe5e11] H1 modificado. Alterando último Commit
+ Date: Wed Jun 5 12:09:56 2024 -0300
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
 
+É possível mostrar as diferenças entre o último Commit e os arquivos do Stage
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git diff --staged
+diff --git a/index.html b/index.html
+index 71f2f62..ca96b3c 100644
+--- a/index.html
++++ b/index.html
+@@ -4,7 +4,7 @@
+     <title>JSP - Hello World</title>
+ </head>
+ <body>
+-<h1><%= "Hello World! Commit" %>
++<h1><%= "Hello World! 2055" %>
+ </h1>
+ <br/>
+ <a href="hello-servlet">Hello Servlet</a>
+```
+Boas práticas com mensagens de Commits iniciando com
+-ADD
+-FIX
+-CHANGE
+-UPDATE
 
+Logs e Histórico
+git log
+
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git log
+commit ebe5e1136e621625bf0c2a623b954e093cd17bb3 (HEAD -> master)
+Author: Lucas Alberto <lschlestein@gmail.com>
+Date:   Wed Jun 5 12:09:56 2024 -0300
+
+    H1 modificado. Alterando último Commit
+
+commit c93cfe8720e1960cf82be151233b719d2b9de43d
+Author: Lucas Alberto <lschlestein@gmail.com>
+Date:   Wed Jun 5 12:03:51 2024 -0300
+```
+
+Simplificando o log em uma única linha
+
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git log --oneline
+ebe5e11 (HEAD -> master) H1 modificado. Alterando último Commit
+c93cfe8 Primeiro Commit Git
+```
+
+Limitando aos últimos 5 commits
+
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git log --oneline -5
+ebe5e11 (HEAD -> master) H1 modificado. Alterando último Commit
+c93cfe8 Primeiro Commit Git
+```
+Utilizando o graph
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git log --graph
+* commit ebe5e1136e621625bf0c2a623b954e093cd17bb3 (HEAD -> master)
+| Author: Lucas Alberto <lschlestein@gmail.com>
+| Date:   Wed Jun 5 12:09:56 2024 -0300
+|
+|     H1 modificado. Alterando último Commit
+|
+* commit c93cfe8720e1960cf82be151233b719d2b9de43d
+  Author: Lucas Alberto <lschlestein@gmail.com>
+  Date:   Wed Jun 5 12:03:51 2024 -0300
+
+      Primeiro Commit Git
+```
+
+Filtrando por autor
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git log --author="Lucas"
+commit ebe5e1136e621625bf0c2a623b954e093cd17bb3 (HEAD -> master)
+Author: Lucas Alberto <lschlestein@gmail.com>
+Date:   Wed Jun 5 12:09:56 2024 -0300
+
+    H1 modificado. Alterando último Commit
+
+commit c93cfe8720e1960cf82be151233b719d2b9de43d
+Author: Lucas Alberto <lschlestein@gmail.com>
+Date:   Wed Jun 5 12:03:51 2024 -0300
+```
+
+Shortlog
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git shortlog
+Lucas Alberto (2):
+      Primeiro Commit Git
+      H1 modificado. Alterando último Commit
+```
