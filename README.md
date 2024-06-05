@@ -60,4 +60,42 @@ remote: Total 27 (delta 0), reused 27 (delta 0), pack-reused 0
 Receiving objects: 100% (27/27), 6.64 KiB | 3.32 MiB/s, done.
 ```
 
+O simples fato de termos clonado um repositório remoto, não nos garante o sincronismo do nosso projeto local com o remoto.
+É necessário que façamos o controle desse sincronismo
+Fluxo de trabalho: Working Dir, Stage (Palco) e Head
+![image](https://github.com/lschlestein/git/assets/103784532/740f6a2e-74b1-4cca-a4da-1f2776288201)
+
+Os arquivos editados ou criados em nosso Working Dir, serão indexados ou adicionados ao Stage(Palco).
+Apartir do momento que adicionamos um arquivos ao Stage, caso o arquivo de nosso Working dir seja modificado, essa mudança não afetará nosso arquivos já indexados.
+Logo em seguida podemos fazer o Commit. A partir desse momento, geramos um histórico de mudança e adicionamos esse arquivo ao nosso Git Repository. Após o Commit (confirmação), o arquivo deixa o Stage
+![image](https://github.com/lschlestein/git/assets/103784532/27693f24-11ee-476b-8df7-445925eb48f8)
+
+#Adicionar e Remover Arquivos, Uso do Status e do Diff
+
+``` git
+C:\Users\Lucas\Desktop\iniciando-com-git>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+        script.js
+        style.css
+```
+
+Para adicionar arquivos ao Stage, podemos adicionar um a um:
+
+C:\Users\Lucas\Desktop\iniciando-com-git>git add index.html
+
+ou todos de uma só vez, que ainda não estão no Stage
+C:\Users\Lucas\Desktop\iniciando-com-git>git add .
+C:\Users\Lucas\Desktop\iniciando-com-git>git add *.css
+
+Atualiza quem ainda não entrou no Stage
+C:\Users\Lucas\Desktop\iniciando-com-git>git add -A
+
+
+
 
