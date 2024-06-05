@@ -315,4 +315,79 @@ C:\Users\Lucas\Desktop\iniciando-com-git>git branch
   master
 ```
 
+Podemos agora olhar o log de ambas as branchs, e veremos que os dois são identicos
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git log --oneline master
+d2a293e (HEAD -> develop, master) Atualizada a linguagem da página
+04c8b92 Atualizado H1
+ebe5e11 H1 modificado. Alterando último Commit
+c93cfe8 Primeiro Commit Git
+
+C:\Users\Lucas\Desktop\iniciando-com-git>git log --oneline develop
+d2a293e (HEAD -> develop, master) Atualizada a linguagem da página
+04c8b92 Atualizado H1
+ebe5e11 H1 modificado. Alterando último Commit
+c93cfe8 Primeiro Commit Git
+```
+
+Agora vamos fazer um Commit na branch develop
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git add index.html
+
+C:\Users\Lucas\Desktop\iniciando-com-git>git status
+On branch develop
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+C:\Users\Lucas\Desktop\iniciando-com-git>git status
+On branch develop
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+C:\Users\Lucas\Desktop\iniciando-com-git>git commit -m "Adiciona assets"
+[develop 420bdf9] Adiciona assets
+ 1 file changed, 2 insertions(+)
+```
+Agora podemos comparar novamente as duas branchs
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git log --oneline develop
+420bdf9 (HEAD -> develop) Adiciona assets
+d2a293e (master) Atualizada a linguagem da página
+04c8b92 Atualizado H1
+ebe5e11 H1 modificado. Alterando último Commit
+c93cfe8 Primeiro Commit Git
+
+C:\Users\Lucas\Desktop\iniciando-com-git>git log --oneline master
+d2a293e (master) Atualizada a linguagem da página
+04c8b92 Atualizado H1
+ebe5e11 H1 modificado. Alterando último Commit
+c93cfe8 Primeiro Commit Git
+```
+Fica claro que só estamos alterando a branch develop
+
+Verificando diferenças entre as branchs
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git diff master develop
+diff --git a/index.html b/index.html
+index 8d51d33..6d48536 100644
+--- a/index.html
++++ b/index.html
+@@ -2,6 +2,8 @@
+ <html lang="pt-br">
+ <head>
+     <title>JSP - Hello World</title>
++    <link rel="stylesheet" href="style.css"/>
++    <script src="script.js"></script>
+ </head>
+ <body>
+ <h1><%= "Hello World! 2034" %>
+```
+
+Repositórios remotos GitHub, Bitbucket, GitLab Gitness
+Mostrar push pull remotes
+merge rebase
+tags
+
 
