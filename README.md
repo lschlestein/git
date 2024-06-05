@@ -96,6 +96,69 @@ C:\Users\Lucas\Desktop\iniciando-com-git>git add *.css
 Atualiza quem ainda não entrou no Stage
 C:\Users\Lucas\Desktop\iniciando-com-git>git add -A
 
+mostra quais arquivos estão dentro e fora do Stage
+git status
+
+Retirar do stage e trazer devolta para nosso Working dir
+git reset index.html
+
+Para restaurar um arquivo que está no Stage para no Working Dir:
+git restore index.html
+
+Vamos adicionar um rodapé ao index.html
+Comparando as diferenças, entre nosso Working Dir e o Stage
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git diff index.html
+diff --git a/index.html b/index.html
+index 5d3469b..126ad9f 100644
+--- a/index.html
++++ b/index.html
+@@ -9,4 +9,9 @@
+ <br/>
+ <a href="hello-servlet">Hello Servlet</a>
+ </body>
++<footer>
++    <p>
++        Desenvolvido por Lucas
++    </p>
++</footer>
+ </html>
+\ No newline at end of file
+
+C:\Users\Lucas\Desktop\iniciando-com-git>git diff
+diff --git a/index.html b/index.html
+index 5d3469b..a561cf5 100644
+--- a/index.html
++++ b/index.html
+@@ -8,5 +8,11 @@
+ </h1>
+ <br/>
+ <a href="hello-servlet">Hello Servlet</a>
++
++<footer>
++    <p>
++        Desenvolvido por Lucas
++    </p>
++</footer>
+ </body>
+ </html>
+\ No newline at end of file
+```
+
+Criando um Commit
+Um Commit, nada mais é que um Snapshot de nosso projeto, que será feito no momento que fazemos a confirmação. (Alterações, Hash, Metadados, Mensagem)
+- Cria rastreamento de alterações
+- Evita sobreescrita de código
+
+Primeiro Commit
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git commit -m "Primeiro Commit Git"
+[master (root-commit) c93cfe8] Primeiro Commit Git
+ 3 files changed, 18 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 script.js
+ create mode 100644 style.css
+```
 
 
 
