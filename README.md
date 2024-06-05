@@ -266,3 +266,53 @@ Lucas Alberto (2):
       Primeiro Commit Git
       H1 modificado. Alterando último Commit
 ```
+
+Reflog - Ações no repositório
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git reflog
+ebe5e11 (HEAD -> master) HEAD@{0}: commit (amend): H1 modificado. Alterando último Commit
+c591b37 HEAD@{1}: commit: Atualização do H1
+c93cfe8 HEAD@{2}: commit (initial): Primeiro Commit Git
+```
+
+Branch
+Caminho alternativo ao Branch principal
+Copia completa do repositório inteiro pra outra branch.
+
+Criando uma nova branch
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git branch dev
+```
+Mostrando as branchs de um repositório
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git branch
+  dev
+* master
+```
+Deletando uma branch
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git branch -D dev
+Deleted branch dev (was d2a293e).
+```
+Mudando de branch (Muda para a branch dev, e como ela ainda não existe, já fará sua criação nesse mesmo instante)
+Checkout faz a navegação entre as branchs
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git checkout -b dev
+Deleted branch dev (was d2a293e).
+```
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git branch
+* dev
+  master
+```
+
+Para renomear a branch atual
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git branch -m "develop"
+
+C:\Users\Lucas\Desktop\iniciando-com-git>git branch
+* develop
+  master
+```
+
+
