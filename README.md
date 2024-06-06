@@ -7,7 +7,7 @@ Para comerçar a trabalhar com o Git é necessário primeiramente fazer sua inst
 
 https://git-scm.com/downloads
 
-###Instalando e configurando o Git
+### Instalando e configurando o Git
 
 Existem maneiras de interagir além do terminal de nosso computador, mas aqui abordaremos praticamente somente comando via terminal.
 
@@ -383,6 +383,78 @@ index 8d51d33..6d48536 100644
  </head>
  <body>
  <h1><%= "Hello World! 2034" %>
+```
+Umas das vantagens do Git é agrupar todo desenvolvimento em um servidor central, com vários colaboradores.
+
+
+Remote no GitHub
+```terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git remote add origin https://github.com/lschlestein/iniciando-com-git.git
+
+C:\Users\Lucas\Desktop\iniciando-com-git>git remote -v
+origin  https://github.com/lschlestein/iniciando-com-git.git (fetch)
+origin  https://github.com/lschlestein/iniciando-com-git.git (push)
+````
+Nota-se que origin é o nome da nossa brabch remota
+
+Subindo push nosso projeto para nosso repositório no GitHub (Origin<-Develop)
+``` terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git push -u origin develop
+Enumerating objects: 24, done.
+Counting objects: 100% (24/24), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (23/23), done.
+Writing objects: 100% (24/24), 2.90 KiB | 990.00 KiB/s, done.
+Total 24 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), done.
+To https://github.com/lschlestein/iniciando-com-git.git
+ * [new branch]      develop -> develop
+Branch 'develop' set up to track remote branch 'develop' from 'origin'.
+```
+
+Obtendo pull mudanças do GitHub (Origin->Develop)
+```Terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git pull origin develop
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 947 bytes | 67.00 KiB/s, done.
+From https://github.com/lschlestein/iniciando-com-git
+ * branch            develop    -> FETCH_HEAD
+   d1f45f3..8d66bab  develop    -> origin/develop
+Updating d1f45f3..8d66bab
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+```
+
+git checkout troca as branchs
+```terminal
+C:\Users\Lucas\Desktop\iniciando-com-git>git checkout master
+Switched to branch 'master'
+
+C:\Users\Lucas\Desktop\iniciando-com-git>git merge dev
+Updating d2a293e..2af316c
+Fast-forward
+ .idea/.gitignore            |  8 ++++++++
+ .idea/.name                 |  1 +
+ .idea/iniciando-com-git.iml |  9 +++++++++
+ .idea/misc.xml              |  6 ++++++
+ .idea/modules.xml           |  8 ++++++++
+ .idea/vcs.xml               |  6 ++++++
+ README.md                   |  1 +
+ index.html                  | 12 ++++++++----
+ script.js                   |  3 +++
+ 9 files changed, 50 insertions(+), 4 deletions(-)
+ create mode 100644 .idea/.gitignore
+ create mode 100644 .idea/.name
+ create mode 100644 .idea/iniciando-com-git.iml
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 .idea/vcs.xml
+ create mode 100644 README.md
 ```
 
 Repositórios remotos GitHub, Bitbucket, GitLab Gitness
