@@ -456,7 +456,7 @@ Fast-forward
  create mode 100644 .idea/vcs.xml
  create mode 100644 README.md
 ```
-
+[Praticando Branchs](https://learngitbranching.js.org/?locale=pt_BR)
 Repositórios remotos GitHub, Bitbucket, GitLab Gitness
 Mostrar push pull remotes
 merge rebase
